@@ -1,9 +1,37 @@
+Skip to content
+Search or jump to…
+Pulls
+Issues
+Marketplace
+Explore
+ 
+@achope33 
+achope33
+/
+nzairfares
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+More
+nzairfares/templates/home.html
+@achope33
+achope33 Update home.html
+Latest commit fff799a 7 days ago
+ History
+ 1 contributor
+174 lines (138 sloc)  6.02 KB
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flight Price Prediction</title>
+    <title>NZ Air Fare Prediction</title>
 
 
     <!-- BootStrap -->
@@ -23,7 +51,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="/">FLIGHT PRICE</a>
+                <a class="navbar-brand" href="/">Air Fare</a>
             </div>
         </div>
     </nav>
@@ -44,7 +72,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Departure Date</h5>
                             <!-- Departure -->
-                            <input type="datetime-local" name="Dep_Time" id="Dep_Time" required="required">
+                            <input type="datetime-local" name="Dep. time" id="Dep. time" required="required">
                         </div>
                     </div>
                 </div>
@@ -56,7 +84,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Arrival Date</h5>
                             <!-- Arrival -->
-                            <input type="datetime-local" name="Arrival_Time" id="Arrival_Time" required="required">
+                            <input type="datetime-local" name="Arr. time" id="Arr. time" required="required">
                         </div>
                     </div>
                 </div>
@@ -70,13 +98,12 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <!-- Source -->
-                            <h5 class="card-title">Source</h5>
-                            <select name="Source" id="Source" required="required">
-                                <option value="Delhi">Delhi</option>
-                                <option value="Kolkata">Kolkata</option>
-                                <option value="Mumbai">Mumbai</option>
-                                <option value="Chennai">Chennai</option>
+                            <!-- Departure -->
+                            <h5 class="card-title">Departure</h5>
+                            <select name="Departure" id="Departure" required="required">
+                                <option value="Auckland">Auckland</option>
+                                <option value="Christchurch">Christchurch</option>
+                                <option value="Wellington">Wellington</option>
                             </select>
                         </div>
                     </div>
@@ -87,11 +114,14 @@
                             <h5 class="card-title">Destination</h5>
                             <!-- Destination -->
                             <select name="Destination" id="Destination" required="required">
-                                <option value="Cochin">Cochin</option>
-                                <option value="Delhi">Delhi</option>
-                                <option value="New Delhi">New Delhi</option>
-                                <option value="Hyderabad">Hyderabad</option>
-                                <option value="Kolkata">Kolkata</option>
+                                <option value="Nelson">Nelson</option>
+                                <option value="Auckland">Auckland</option>
+                                <option value="Palmerston North">Palmerston North</option>
+                                <option value="Christchurch">Christchurch</option>
+                                <option value="Queenstown">Queenstown</option>
+                                <option value="Hawke's Bay">Hawke's Bay</option>
+                                <option value="New Plymouth">New Plymouth</option>
+                                <option value="Dunedin">Dunedin</option>
                             </select>
                         </div>
                     </div>
@@ -108,14 +138,13 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Stopage</h5>
+                            <h5 class="card-title">Stops</h5>
                             <!-- Total Stops -->
-                            <select name="stops" required="required">
-                                <option value="0">Non-Stop</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
+                            <select name="Direct" required="required">
+                                <option value="0">Direct</option>
+                                <option value="1">1 stop</option>
+                                <option value="2">2 stops</option>
+                                <option value="3">3 stops</option>
                             </select>
                         </div>
                     </div>
@@ -123,22 +152,12 @@
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Which Airline you want to travel?</h5>
+                            <h5 class="card-title">Airlines option</h5>
                             <!-- Airline -->
-                            <select name="airline" id="airline" required="required">
-                                <option value="Jet Airways">Jet Airways</option>
-                                <option value="IndiGo">IndiGo</option>
-                                <option value="Air India">Air India</option>
-                                <option value="Multiple carriers">Multiple carriers</option>
-                                <option value="SpiceJet">SpiceJet</option>
-                                <option value="Vistara">Vistara</option>
-                                <option value="Air Asia">Air Asia</option>
-                                <option value="GoAir">GoAir</option>
-                                <option value="Multiple carriers Premium economy">Multiple carriers Premium economy
-                                </option>
-                                <option value="Jet Airways Business">Jet Airways Business</option>
-                                <option value="Vistara Premium economy">Vistara Premium economy</option>
-                                <option value="Trujet">Trujet</option>
+                            <select name="Airline" id="Airline" required="required">
+                                <option value="Air New Zealand">Air New Zealand</option>
+                                <option value="Jetstar">Jetar</option>
+                              
                             </select>
                         </div>
                     </div>
@@ -160,7 +179,7 @@
 
         <br>
         <br>
-        <p>©2020 Amar Mandal</p>
+        <p>©2022 AC</p>
 
     </div>
 
@@ -181,3 +200,18 @@
 </body>
 
 </html>
+Footer
+© 2022 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+nzairfares/home.html at main · achope33/nzairfares
