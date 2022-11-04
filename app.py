@@ -22,11 +22,11 @@ def home():
 def predict():
     if request.method == "POST":
 
-        # Travel_date
+        # Date_of_Journey
         date_dep = request.form["Dep_Time"]
-        Travel_day = int(pd.to_datetime(date_dep, format="%Y-%m-%dT%H:%M").day)
-        Travel_month = int(pd.to_datetime(date_dep, format ="%Y-%m-%dT%H:%M").month)
-        # print("Travel Date : ",Travel_day, Travel_month)
+        Journey_day = int(pd.to_datetime(date_dep, format="%Y-%m-%dT%H:%M").day)
+        Journey_month = int(pd.to_datetime(date_dep, format ="%Y-%m-%dT%H:%M").month)
+        # print("Journey Date : ",Journey_day, Journey_month)
 
         # Departure
         Dep_hour = int(pd.to_datetime(date_dep, format ="%Y-%m-%dT%H:%M").hour)
@@ -69,9 +69,9 @@ def predict():
         # print(Air_New_Zealand,
         #     Jetstar)
 
-        # Departure
+        # Source
         # Queenstown = 0 (not in column)
-        Departure = request.form["Departure"]
+        Source = request.form["Source"]
         if (Departure == 'Wellington'):
             Dept_WLG = 1
             Dept_CHC = 0
@@ -205,21 +205,19 @@ def predict():
         # )
         
 
-    #     ['Total_Stops', 'Travel_day', 'Travel_month', 'Dep_hour',
+    #     ['Total_Stops', 'Journey_day', 'Journey_month', 'Dep_hour',
     #    'Dep_min', 'Arrival_hour', 'Arrival_min', 'Duration_hours',
-    #    'Duration_mins', 'Airline_Sounds Air', 'Airline_GoAir', 'Airline_Jetstar',
-    #    'Airline_Air New Zealand', 'Airline_Air New Zealand Business',
-    #    'Airline_Multiple carriers',
-    #    'Airline_Multiple carriers Premium economy', 'Airline_SpiceJet',
-    #    'Airline_Trujet', 'Airline_Vistara', 'Airline_Vistara Premium economy',
-    #    'Departure_Chennai', 'Departure_Delhi', 'Departure_Kolkata', 'Departure_Mumbai',
-    #    'Destination_Cochin', 'Destination_Delhi', 'Destination_Hyderabad',
-    #    'Destination_Kolkata', 'Destination_New Delhi']
+    #    'Duration_mins', 'Airline_Sounds Air', 'Airline_Jetstar',
+    #    'Airline_Air New Zealand', 
+    #    'Departure_Auckland', 'Departure_Christchurch', 'Departure_Wellington', 
+    #    'Destination_Nelson', 'Destination_Auckland', 'Destination_Palmerston North',
+    #    'Destination_Christchurch', 'Destination_Queenstown','Destination_Hawke's Bay',
+    #    'Destination_New Plymonth','Destination_Dunedin']
         
         prediction=model.predict([[
             Total_stops,
-            Travel_day,
-            Travel_month,
+            Journey_day,
+            Journey_month,
             Dep_hour,
             Dep_min,
             Arrival_hour,
@@ -240,12 +238,11 @@ def predict():
             Arr_NPE,
             Arr_NPL,
             Arr_DUD
-           
         ]])
 
         output=round(prediction[0],2)
 
-        return render_template('home.html',prediction_text="Your Flight price is Rs. {}".format(output))
+        return render_template('home.html',prediction_text="Your Flight price is NZD. {}".format(output))
 
 
     return render_template("home.html")
