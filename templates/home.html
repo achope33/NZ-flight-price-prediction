@@ -1,31 +1,3 @@
-Skip to content
-Search or jump to…
-Pulls
-Issues
-Marketplace
-Explore
- 
-@achope33 
-achope33
-/
-nzairfares
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-More
-nzairfares/templates/home.html
-@achope33
-achope33 Update home.html
-Latest commit fff799a 7 days ago
- History
- 1 contributor
-174 lines (138 sloc)  6.02 KB
-
 <html lang="en">
 
 <head>
@@ -72,7 +44,7 @@ Latest commit fff799a 7 days ago
                         <div class="card-body">
                             <h5 class="card-title">Departure Date</h5>
                             <!-- Departure -->
-                            <input type="datetime-local" name="Dep. time" id="Dep. time" required="required">
+                            <input type="datetime-local" name="Dep_Time" id="Dep_Time" required="required">
                         </div>
                     </div>
                 </div>
@@ -84,7 +56,7 @@ Latest commit fff799a 7 days ago
                         <div class="card-body">
                             <h5 class="card-title">Arrival Date</h5>
                             <!-- Arrival -->
-                            <input type="datetime-local" name="Arr. time" id="Arr. time" required="required">
+                            <input type="datetime-local" name="Arrival_Time" id="Arrival_Time" required="required">
                         </div>
                     </div>
                 </div>
@@ -100,7 +72,7 @@ Latest commit fff799a 7 days ago
                         <div class="card-body">
                             <!-- Departure -->
                             <h5 class="card-title">Departure</h5>
-                            <select name="Departure" id="Departure" required="required">
+                            <select name="Departure" id="Source" required="required">
                                 <option value="Auckland">Auckland</option>
                                 <option value="Christchurch">Christchurch</option>
                                 <option value="Wellington">Wellington</option>
@@ -140,11 +112,11 @@ Latest commit fff799a 7 days ago
                         <div class="card-body">
                             <h5 class="card-title">Stops</h5>
                             <!-- Total Stops -->
-                            <select name="Direct" required="required">
-                                <option value="0">Direct</option>
-                                <option value="1">1 stop</option>
-                                <option value="2">2 stops</option>
-                                <option value="3">3 stops</option>
+                            <select name="stops" required="required">
+                                <option value="0">1</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
                             </select>
                         </div>
                     </div>
@@ -152,11 +124,11 @@ Latest commit fff799a 7 days ago
                 <div class="col-sm-6">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">Airlines option</h5>
+                            <h5 class="card-title">Airlines options</h5>
                             <!-- Airline -->
                             <select name="Airline" id="Airline" required="required">
                                 <option value="Air New Zealand">Air New Zealand</option>
-                                <option value="Jetstar">Jetar</option>
+                                <option value="Jetstar">Jetstar</option>
                               
                             </select>
                         </div>
@@ -200,18 +172,3 @@ Latest commit fff799a 7 days ago
 </body>
 
 </html>
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-nzairfares/home.html at main · achope33/nzairfares
