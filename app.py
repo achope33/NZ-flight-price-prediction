@@ -50,7 +50,7 @@ def predict():
 
         # Airline
         # Sounds_Air = 0 (not in column)
-        airline=request.form['airline']
+        airline=request.form['Airline']
         if(airline=='Air New Zealand'):
             Air_New_Zealand = 1
             Jetstar = 0
@@ -209,7 +209,7 @@ def predict():
     #    'Dep_min', 'Arrival_hour', 'Arrival_min', 'Duration_hours',
     #    'Duration_mins', 'Airline_Sounds Air', 'Airline_Jetstar',
     #    'Airline_Air New Zealand', 
-    #    'Departure_Auckland', 'Departure_Christchurch', 'Departure_Wellington', 
+    #    'Source_Auckland', 'Source_Christchurch', 'Source_Wellington', 
     #    'Destination_Nelson', 'Destination_Auckland', 'Destination_Palmerston North',
     #    'Destination_Christchurch', 'Destination_Queenstown','Destination_Hawke's Bay',
     #    'Destination_New Plymonth','Destination_Dunedin']
@@ -227,17 +227,17 @@ def predict():
             Sounds_Air,
             Jetstar,
             Air_New_Zealand,
-            Dept_WLG,
-            Dept_CHC,
-            Dept_AKL,
-            Arr_NSN,
-            Arr_AKL,
-            Arr_PMR,
-            Arr_CHC,
-            Arr_ZQN,
-            Arr_NPE,
-            Arr_NPL,
-            Arr_DUD
+            s_WLG,
+            s_CHC,
+            s_AKL,
+            d_NSN,
+            d_AKL,
+            d_PMR,
+            d_CHC,
+            d_ZQN,
+            d_NPE,
+            d_NPL,
+            d_DUD
         ]])
 
         output=round(prediction[0],2)
