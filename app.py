@@ -72,136 +72,136 @@ def predict():
         # Source
         # Queenstown = 0 (not in column)
         Source = request.form["Source"]
-        if (Departure == 'Wellington'):
-            Dept_WLG = 1
-            Dept_CHC = 0
-            Dept_AKL = 0
+        if (Source == 'Wellington'):
+            s_WLG = 1
+            s_CHC = 0
+            s_AKL = 0
 
 
         elif (Departure == 'Christchurch'):
-            Dept_WLG = 0
-            Dept_CHC = 1
-            Dept_AKL = 0
+            s_WLG = 0
+            s_CHC = 1
+            s_AKL = 0
 
 
         elif (Departure == 'Auckland'):
-            Dept_WLG = 0
-            Dept_CHC = 0
-            Dept_AKL = 1
+            s_WLG = 0
+            s_CHC = 0
+            s_AKL = 1
 
 
 
         else:
-            Dept_WLG = 0
-            Dept_CHC = 0
-            Dept_AKL = 0
+            s_WLG = 0
+            s_CHC = 0
+            s_AKL = 0
 
-        # print(Dept_WLG,
-        #     Dept_CHC,
-        #     Dept_AKL)
+        # print(s_WLG,
+        #     s_CHC,
+        #     s_AKL)
 
         # Destination
         # Wellington = 0 (not in column)
         Destination = request.form["Destination"]
         if (Destination == 'Nelson'):
-            Arr_NSN = 1
-            Arr_AKL = 0
-            Arr_PMR = 0
-            Arr_CHC = 0
-            Arr_ZQN = 0
-            Arr_NPE = 0
-            Arr_NPL = 0
-            Arr_DUD = 0
+            d_NSN = 1
+            d_AKL = 0
+            d_PMR = 0
+            d_CHC = 0
+            d_ZQN = 0
+            d_NPE = 0
+            d_NPL = 0
+            d_DUD = 0
 
         elif (Destination == 'Auckland'):
-            Arr_NSN = 0
-            Arr_AKL = 1
-            Arr_PMR = 0
-            Arr_CHC = 0
-            Arr_ZQN = 0
-            Arr_NPE = 0
-            Arr_NPL = 0
-            Arr_DUD = 0
+            d_NSN = 0
+            d_AKL = 1
+            d_PMR = 0
+            d_CHC = 0
+            d_ZQN = 0
+            d_NPE = 0
+            d_NPL = 0
+            d_DUD = 0
 
         elif (Destination == 'Palmerston_North'):
-            Arr_NSN = 0
-            Arr_AKL = 0
-            Arr_PMR = 1
-            Arr_CHC = 0
-            Arr_ZQN = 0
-            Arr_NPE = 0
-            Arr_NPL = 0
-            Arr_DUD = 0
+            d_NSN = 0
+            d_AKL = 0
+            d_PMR = 1
+            d_CHC = 0
+            d_ZQN = 0
+            d_NPE = 0
+            d_NPL = 0
+            d_DUD = 0
 
         elif (Destination == 'Christchurch'):
-            Arr_NSN = 0
-            Arr_AKL = 0
-            Arr_PMR = 0
-            Arr_CHC = 1
-            Arr_ZQN = 0
-            Arr_NPE = 0
-            Arr_NPL = 0
-            Arr_DUD = 0
+            d_NSN = 0
+            d_AKL = 0
+            d_PMR = 0
+            d_CHC = 1
+            d_ZQN = 0
+            d_NPE = 0
+            d_NPL = 0
+            d_DUD = 0
 
         elif (Destination == 'Queentown'):
-            Arr_NSN = 0
-            Arr_AKL = 0
-            Arr_PMR = 0
-            Arr_CHC = 0
-            Arr_ZQN = 1
-            Arr_NPE = 0
-            Arr_NPL = 0
-            Arr_DUD = 0
+            d_NSN = 0
+            d_AKL = 0
+            d_PMR = 0
+            d_CHC = 0
+            d_ZQN = 1
+            d_NPE = 0
+            d_NPL = 0
+            d_DUD = 0
 
         elif (Destination == 'Hawkes_Bay'):
-            Arr_NSN = 0
-            Arr_AKL = 0
-            Arr_PMR = 0
-            Arr_CHC = 0
-            Arr_ZQN = 0
-            Arr_NPE = 1
-            Arr_NPL = 0
-            Arr_DUD = 0
+            d_NSN = 0
+            d_AKL = 0
+            d_PMR = 0
+            d_CHC = 0
+            d_ZQN = 0
+            d_NPE = 1
+            d_NPL = 0
+            d_DUD = 0
 
         elif (Destination == 'New_Plymonth'):
-            Arr_NSN = 0
-            Arr_AKL = 0
-            Arr_PMR = 0
-            Arr_CHC = 0
-            Arr_ZQN = 0
-            Arr_NPE = 0
-            Arr_NPL = 1
-            Arr_DUD = 0
+            d_NSN = 0
+            d_AKL = 0
+            d_PMR = 0
+            d_CHC = 0
+            d_ZQN = 0
+            d_NPE = 0
+            d_NPL = 1
+            d_DUD = 0
 
         elif (Destination == 'Dunedin'):
-            Arr_NSN = 0
-            Arr_AKL = 0
-            Arr_PMR = 0
-            Arr_CHC = 0
-            Arr_ZQN = 0
-            Arr_NPE = 0
-            Arr_NPL = 0
-            Arr_DUD = 1
+            d_NSN = 0
+            d_AKL = 0
+            d_PMR = 0
+            d_CHC = 0
+            d_ZQN = 0
+            d_NPE = 0
+            d_NPL = 0
+            d_DUD = 1
 
         else:
-            Arr_NSN = 0
-            Arr_AKL = 0
-            Arr_PMR = 0
-            Arr_CHC = 0
-            Arr_ZQN = 0
-            Arr_NPE = 0
-            Arr_NPL = 0
-            Arr_DUD = 0
+            d_NSN = 0
+            d_AKL = 0
+            d_PMR = 0
+            d_CHC = 0
+            d_ZQN = 0
+            d_NPE = 0
+            d_NPL = 0
+            d_DUD = 0
 
         # print(
-        #     Arr_NSN,
-        #     Arr_AKL,
-        #     Arr_PMR,
-        #     Arr_CHC,
-        #     Arr_ZQN,
-        #     Arr_NPE,
-        #     Arr_NPL,
-        #     Arr_DUD
+        #     d_NSN,
+        #     d_AKL,
+        #     d_PMR,
+        #     d_CHC,
+        #     d_ZQN,
+        #     d_NPE,
+        #     d_NPL,
+        #     d_DUD
         # )
         
 
