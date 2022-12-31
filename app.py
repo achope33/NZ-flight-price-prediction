@@ -78,13 +78,13 @@ def predict():
             s_AKL = 0
 
 
-        elif (Departure == 'Christchurch'):
+        elif (Source == 'Christchurch'):
             s_WLG = 0
             s_CHC = 1
             s_AKL = 0
 
 
-        elif (Departure == 'Auckland'):
+        elif (Source == 'Auckland'):
             s_WLG = 0
             s_CHC = 0
             s_AKL = 1
