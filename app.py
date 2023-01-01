@@ -45,8 +45,8 @@ def predict():
         # print("Duration : ", dur_hour, dur_min)
 
         # Total Stops
-        Total_stops = int(request.form["Total_stops"])
-        # print(Total_stops)
+        Total_Stops = int(request.form["Total_Stops"])
+        # print(Total_Stops)
 
         # Airline
         # Sounds_Air = 0 (not in column)
